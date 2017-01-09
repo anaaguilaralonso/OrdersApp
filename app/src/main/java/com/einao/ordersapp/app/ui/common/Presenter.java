@@ -1,7 +1,20 @@
 package com.einao.ordersapp.app.ui.common;
 
-public abstract class Presenter {
+import java.lang.ref.WeakReference;
+
+public abstract class Presenter<View> {
+
+    protected final WeakReference<View> view;
+
+    public Presenter(View view) {
+        this.view = new WeakReference<>(view);
+    }
+
     public abstract void start();
 
     public abstract void stop();
+
+    public boolean existView() {
+        return view.get() != null;
+    }
 }

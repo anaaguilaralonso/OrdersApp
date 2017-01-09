@@ -285,4 +285,124 @@ public class Load {
             return new Load(this);
         }
     }
+
+    public String getShiper() {
+        return shiper;
+    }
+
+    public String getOrigin_date() {
+        return origin_date;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public String getPackageType() {
+        return packageType;
+    }
+
+    public String getDestination_date_end() {
+        return destination_date_end;
+    }
+
+    public Integer getSize_width() {
+        return size_width;
+    }
+
+    public Integer getDistance() {
+        return distance;
+    }
+
+    public String getDestination_date() {
+        return destination_date;
+    }
+
+    public String getDestination_companyName() {
+        return destination_companyName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getSize_height() {
+        return size_height;
+    }
+
+    public String getDriver() {
+        return driver;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public Double getOrigin_lon() {
+        return origin_lon;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public Double getDestination_lat() {
+        return destination_lat;
+    }
+
+    public String getOrigin_full_address() {
+        return origin_full_address;
+    }
+
+    public Double getOrigin_lat() {
+        return origin_lat;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public String getOrigin_companyName() {
+        return origin_companyName;
+    }
+
+    public String getFreightType() {
+        return freightType;
+    }
+
+    public Integer getSize_length() {
+        return size_length;
+    }
+
+    public String getOrigin_contactName() {
+        return origin_contactName;
+    }
+
+    public String getDestination_full_address() {
+        return destination_full_address;
+    }
+
+    public Double getDestination_lon() {
+        return destination_lon;
+    }
+
+    public String getDestination_contactName() {
+        return destination_contactName;
+    }
+
+    public String getExtra_info() {
+        return extra_info;
+    }
+
+    public String getOrigin_date_end() {
+        return origin_date_end;
+    }
 }

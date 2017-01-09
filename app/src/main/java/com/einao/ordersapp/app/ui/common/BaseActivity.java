@@ -18,6 +18,10 @@ public abstract class BaseActivity<T extends Presenter> extends AppCompatActivit
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setContentView(getLayout());
+
+        ButterKnife.bind(this);
+
         firebaseAuthenticator = new FirebaseAuthenticator(this);
         firebaseAuthenticator.authenticate(
                 AuthenticationCredentials.AUTHENTICATE_EMAIL, AuthenticationCredentials.AUTHENTICATE_PASSWORD);
@@ -28,6 +32,7 @@ public abstract class BaseActivity<T extends Presenter> extends AppCompatActivit
 
 
     }
+
 
     @Override
     protected void onStart() {
@@ -42,4 +47,6 @@ public abstract class BaseActivity<T extends Presenter> extends AppCompatActivit
     }
 
     public abstract T initPresenter();
+
+    protected abstract int getLayout();
 }
