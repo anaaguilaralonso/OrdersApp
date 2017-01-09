@@ -8,6 +8,8 @@ import com.einao.ordersapp.app.common.AuthenticationCredentials;
 import com.einao.ordersapp.data.network.firebase.FirebaseAuthenticator;
 import com.einao.ordersapp.domain.auth.Authenticator;
 
+import butterknife.ButterKnife;
+
 public abstract class BaseActivity<T extends Presenter> extends AppCompatActivity {
 
     protected T presenter;
@@ -29,10 +31,7 @@ public abstract class BaseActivity<T extends Presenter> extends AppCompatActivit
         if (presenter == null) {
             presenter = initPresenter();
         }
-
-
     }
-
 
     @Override
     protected void onStart() {

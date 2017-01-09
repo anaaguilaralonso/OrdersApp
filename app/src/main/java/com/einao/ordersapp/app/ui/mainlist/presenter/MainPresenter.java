@@ -46,6 +46,9 @@ public class MainPresenter extends Presenter<MainView> {
 
         @Override
         public void onSuccess(Loads data) {
+            if (!existView()) return;
+            view.get().clearList();
+
             LoadsViewModerMapper mapper = new LoadsViewModerMapper();
             LoadsViewModel loadsViewModel = mapper.map(data);
 

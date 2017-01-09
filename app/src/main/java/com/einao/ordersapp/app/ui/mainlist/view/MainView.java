@@ -6,4 +6,6 @@ import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 public interface MainView extends BaseView {
 
     void addLoad(LoadViewModel load);
+
+    void clearList();
 }

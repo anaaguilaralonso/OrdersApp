@@ -38,4 +38,7 @@ public class LoadsViewModel {
         return loads.iterator();
     }
 
+    public void deleteAll() {
+        loads.clear();
+    }
 }
