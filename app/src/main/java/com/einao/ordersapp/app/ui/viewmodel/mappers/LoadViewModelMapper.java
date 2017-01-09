@@ -15,7 +15,7 @@ public class LoadViewModelMapper {
         loadViewModel.setDestination_date(load.getDestination_date());
         loadViewModel.setName(load.getName());
         loadViewModel.setStatus(load.getStatus());
-        loadViewModel.setPrice(load.getPrice());
+        loadViewModel.setPrice(load.getPrice()+"€");
         loadViewModel.setDestination_full_address(load.getDestination_full_address());
 
         return loadViewModel;

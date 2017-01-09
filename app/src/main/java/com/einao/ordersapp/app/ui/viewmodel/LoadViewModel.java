@@ -14,7 +14,7 @@ public class LoadViewModel {
 
     private Integer status;
 
-    private Integer price;
+    private String price;
 
     private String destination_full_address;
 
@@ -67,11 +67,11 @@ public class LoadViewModel {
         this.status = status;
     }
 
-    public Integer getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
