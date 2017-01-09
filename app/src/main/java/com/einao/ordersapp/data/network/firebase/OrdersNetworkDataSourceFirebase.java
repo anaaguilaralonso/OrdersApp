@@ -2,6 +2,7 @@ package com.einao.ordersapp.data.network.firebase;
 
 import android.util.Log;
 
+import com.einao.ordersapp.data.network.common.EndpointConstants;
 import com.einao.ordersapp.data.network.OrdersNetworkDataSource;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,13 +26,13 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
     @Override
     public void getOrders() {
 
-        myRef.child("loads").addValueEventListener(new ValueEventListener() {
+        myRef.child(EndpointConstants.RESOURCE_LOADS).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 //String value = dataSnapshot.getValue(String.class);
-                Log.d(this.getClass().getName(), "Value is something!"+dataSnapshot.toString());
+                Log.d(this.getClass().getName(), dataSnapshot.toString());
             }
 
             @Override

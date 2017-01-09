@@ -19,7 +19,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
         presenter.start();
     }
-    
+
     @Override
     public MainPresenter initPresenter() {
         return new MainPresenter(new OrdersUseCase(new OrdersDataRepository(new OrdersNetworkDataSourceFirebase(),
