@@ -3,6 +3,87 @@
 
     <item
         is-multidex="true"
+        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_0d9c3d06ceea3408496de8df108b92ea29ae8593/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.0.1_cae47f6c2a0116bf77464748d8c0c66e92279b93/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_fc6cdd12b5e6e21b83f22819c1aa0a097791b544/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_06993036daf71777c56386c18458f99f710d9a23/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.0.1_643c83a92ca700a001bf525894220017a928818f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.0.1_b8b15ccdea7024fbb1cdcfb95048b346fce92940/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_2c7c0af69ba975600e1310f296536b5bbdcd5477/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/akiana/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_c132c122713b4d0ba48f9dfb1a9f1eafbd2d027b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4a42d351d175302e405be33247ece5ce12f971e2">
+        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ec800a0b635781f9b35981bbd39e4a64a34478f3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -27,15 +108,6 @@
         revision="23.0.2"
         sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
         <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_d69b744d91bb73771404f7e4e892aab92c7d01b1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
-        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_0d9c3d06ceea3408496de8df108b92ea29ae8593/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -66,15 +138,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-10.0.1_cae47f6c2a0116bf77464748d8c0c66e92279b93/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -88,26 +151,8 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="6c717137b8d7a462087b7d6191a2e18bab65bb38">
+        sha1="5357ba10f944e773bb15889debddb762026a2379">
         <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_cd39c73a448770fa7402a99c89030c26276452b6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
-        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_fc6cdd12b5e6e21b83f22819c1aa0a097791b544/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-10.0.1_06993036daf71777c56386c18458f99f710d9a23/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -120,30 +165,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
-        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-10.0.1_643c83a92ca700a001bf525894220017a928818f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
         <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-10.0.1_fcd9b9434ac3d1e1427aa0b6390b481e920a1199/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/10.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-10.0.1_b8b15ccdea7024fbb1cdcfb95048b346fce92940/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -156,15 +183,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_2c7c0af69ba975600e1310f296536b5bbdcd5477/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -174,30 +192,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/akiana/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.0/support-annotations-25.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_c132c122713b4d0ba48f9dfb1a9f1eafbd2d027b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/10.0.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
         <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-10.0.1_e5aba67f25a8dea7bec27d33313c7299ff4cac16/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="1529b107ce68865accc96a6ba9c979ef78111e34">
-        <dex dex="/Users/akiana/Desktop/Proyectos/OrdersApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ec800a0b635781f9b35981bbd39e4a64a34478f3/classes.dex" />
     </item>
 
 </items>
