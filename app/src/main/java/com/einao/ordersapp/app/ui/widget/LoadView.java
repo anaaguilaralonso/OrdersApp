@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -16,8 +17,20 @@ import butterknife.ButterKnife;
 
 public class LoadView extends RelativeLayout {
 
-    @BindView(R.id.title)
-    TextView title;
+    @BindView(R.id.name)
+    TextView name;
+
+    @BindView(R.id.destination)
+    TextView destination;
+
+    @BindView(R.id.price)
+    TextView price;
+
+    @BindView(R.id.destinationDate)
+    TextView destinationDate;
+
+    @BindView(R.id.status)
+    TextView status;
 
     public LoadView(Context context) {
         super(context);
@@ -45,7 +58,11 @@ public class LoadView extends RelativeLayout {
         ButterKnife.bind(this);
     }
 
-    public void setLoadViewModel(LoadViewModel loadViewModel){
-        title.setText(loadViewModel.getName());
+    public void setLoadViewModel(LoadViewModel loadViewModel) {
+        name.setText(loadViewModel.getName());
+        destination.setText(loadViewModel.getDestination_full_address());
+        destinationDate.setText(loadViewModel.getDestination_date());
+        price.setText(loadViewModel.getPrice());
+        status.setText(loadViewModel.getStatus());
     }
 }

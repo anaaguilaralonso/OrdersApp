@@ -41,7 +41,8 @@ public class MainPresenter extends Presenter<MainView> {
     private final UseCaseCallback<Loads> useCaseCallback = new UseCaseCallback<Loads>() {
         @Override
         public void onError(Error error) {
-            Log.i(this.getClass().getName(), error.getMessage());
+            if (!existView()) return;
+            view.get().showMessage(error.getMessage());
         }
 
         @Override
