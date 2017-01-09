@@ -8,7 +8,7 @@ import com.einao.ordersapp.app.ui.mainlist.presenter.MainPresenter;
 import com.einao.ordersapp.data.OrdersDataRepository;
 import com.einao.ordersapp.data.network.firebase.OrdersNetworkDataSourceFirebase;
 import com.einao.ordersapp.data.storage.OrdersStorageDataSourceFirebase;
-import com.einao.ordersapp.domain.usecases.OrdersUseCase;
+import com.einao.ordersapp.domain.usecases.GetOrdersUseCase;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements MainView {
 
@@ -22,7 +22,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     @Override
     public MainPresenter initPresenter() {
-        return new MainPresenter(new OrdersUseCase(new OrdersDataRepository(new OrdersNetworkDataSourceFirebase(),
+        return new MainPresenter(new GetOrdersUseCase(new OrdersDataRepository(new OrdersNetworkDataSourceFirebase(),
                 new OrdersStorageDataSourceFirebase())));
     }
 }

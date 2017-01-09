@@ -1,14 +1,14 @@
 package com.einao.ordersapp.app.ui.mainlist.presenter;
 
 import com.einao.ordersapp.app.ui.common.Presenter;
-import com.einao.ordersapp.domain.usecases.OrdersUseCase;
+import com.einao.ordersapp.domain.usecases.GetOrdersUseCase;
 
 public class MainPresenter extends Presenter {
 
 
-    private OrdersUseCase ordersUserCase;
+    private GetOrdersUseCase ordersUserCase;
 
-    public MainPresenter(OrdersUseCase ordersUserCase) {
+    public MainPresenter(GetOrdersUseCase ordersUserCase) {
         this.ordersUserCase = ordersUserCase;
     }
 
