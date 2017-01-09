@@ -25,4 +25,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         return new MainPresenter(new GetOrdersUseCase(new OrdersDataRepository(new OrdersNetworkDataSourceFirebase(),
                 new OrdersStorageDataSourceFirebase())));
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        presenter.stop();
+    }
 }
