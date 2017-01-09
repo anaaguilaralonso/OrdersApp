@@ -14,4 +14,9 @@ public class OrdersDataRepository implements OrdersRepository {
         this.networkDataSource = networkDataSource;
         this.storageDataSource = storageDataSource;
     }
+
+    @Override
+    public void getOrders() {
+        networkDataSource.getOrders();
+    }
 }
