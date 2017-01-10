@@ -15,4 +15,5 @@ public abstract class Presenter<View> {
     public boolean existView() {
         return view.get() != null;
     }
+
 }

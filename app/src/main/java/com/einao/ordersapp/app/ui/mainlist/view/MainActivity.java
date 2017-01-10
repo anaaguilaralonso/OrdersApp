@@ -31,7 +31,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         loadsRecycler.setLayoutManager(layoutManager);
 
-        loadsListAdapter = new LoadsListAdapter();
+        loadsListAdapter = new LoadsListAdapter(onLoadClickListener);
         loadsRecycler.setAdapter(loadsListAdapter);
 
         presenter.start();
@@ -58,4 +58,11 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     public void clearList() {
         loadsListAdapter.clear();
     }
+
+    private LoadsListAdapter.OnLoadClickListener onLoadClickListener = new LoadsListAdapter.OnLoadClickListener() {
+        @Override
+        public void onClick(LoadViewModel loadViewModel) {
+            presenter.onLoadClicked(loadViewModel);
+        }
+    };
 }

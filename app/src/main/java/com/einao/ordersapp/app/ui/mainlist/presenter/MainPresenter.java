@@ -1,9 +1,7 @@
 package com.einao.ordersapp.app.ui.mainlist.presenter;
 
 import com.einao.ordersapp.app.ui.common.Presenter;
-import com.einao.ordersapp.app.ui.mainlist.view.MainActivity;
 import com.einao.ordersapp.app.ui.mainlist.view.MainView;
-import com.einao.ordersapp.app.ui.provider.LoadDetailNavigator;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 import com.einao.ordersapp.app.ui.viewmodel.LoadsViewModel;
 import com.einao.ordersapp.app.ui.viewmodel.mappers.LoadsViewModerMapper;
@@ -18,7 +16,7 @@ import java.util.Iterator;
 public class MainPresenter extends Presenter<MainView> {
 
     private final GetOrdersUseCase ordersUserCase;
-    private final Navigator navigator;
+    private final Navigator<LoadViewModel> navigator;
 
     public MainPresenter(MainView mainView, Navigator navigator, GetOrdersUseCase ordersUserCase) {
         super(mainView);
@@ -68,5 +66,9 @@ public class MainPresenter extends Presenter<MainView> {
 
     private void ordersNotFetched(Error error) {
         view.get().showMessage(error.getMessage());
+    }
+
+    public void onLoadClicked(LoadViewModel loadViewModel) {
+        navigator.goTo(loadViewModel);
     }
 }
