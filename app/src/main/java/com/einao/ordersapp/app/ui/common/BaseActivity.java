@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.einao.ordersapp.app.App;
 import com.einao.ordersapp.app.common.AuthenticationCredentials;
-import com.einao.ordersapp.app.provider.NavigationProvider;
+import com.einao.ordersapp.app.ui.provider.NavigationProvider;
 import com.einao.ordersapp.app.provider.UseCaseProvider;
 import com.einao.ordersapp.data.network.firebase.FirebaseAuthenticator;
 import com.einao.ordersapp.domain.auth.Authenticator;
