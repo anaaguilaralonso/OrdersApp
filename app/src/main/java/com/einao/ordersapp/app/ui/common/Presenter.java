@@ -12,8 +12,6 @@ public abstract class Presenter<View> {
 
     public abstract void start();
 
-    public abstract void stop();
-
     public boolean existView() {
         return view.get() != null;
     }

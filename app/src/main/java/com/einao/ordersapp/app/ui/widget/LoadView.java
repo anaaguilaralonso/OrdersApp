@@ -62,6 +62,6 @@ public class LoadView extends RelativeLayout {
         destination.setText(loadViewModel.getDestinationFullAddress());
         destinationDate.setText(loadViewModel.getDestinationDate());
         price.setText(loadViewModel.getPrice());
-        status.setText(loadViewModel.getStatus().toString());
+        status.setText(String.valueOf(loadViewModel.getStatus()));
     }
 }

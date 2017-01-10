@@ -49,12 +49,6 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        presenter.stop();
-    }
-
-    @Override
     public void addLoad(LoadViewModel load) {
         loadsListAdapter.add(load);
     }

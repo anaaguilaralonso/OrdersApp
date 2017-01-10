@@ -33,7 +33,8 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
     }
 
     @Override
-    public void getOrders() {
+    public void getOrders(NetworkCallback networkCallback) {
+        this.networkCallback = networkCallback;
 
         myRef.child(EndpointConstants.RESOURCE_LOADS).addValueEventListener(new ValueEventListener() {
             @Override
@@ -43,8 +44,8 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
                 Log.d(this.getClass().getName(), dataSnapshot.toString());
 
                 LoadsEntity loadsEntity = createLoadsEntity(dataSnapshot);
-                if (networkCallback == null) return;
-                networkCallback.onSuccess(loadsEntity);
+                if (OrdersNetworkDataSourceFirebase.this.networkCallback == null) return;
+                OrdersNetworkDataSourceFirebase.this.networkCallback.onSuccess(loadsEntity);
             }
 
             @Override
@@ -53,8 +54,8 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
                 Log.w(this.getClass().getName(), "Failed to read value.", error.toException());
 
                 Error errorEntity = createErrorEntity(error);
-                if (networkCallback == null) return;
-                networkCallback.onFailure(errorEntity);
+                if (OrdersNetworkDataSourceFirebase.this.networkCallback == null) return;
+                OrdersNetworkDataSourceFirebase.this.networkCallback.onFailure(errorEntity);
             }
         });
     }
@@ -79,8 +80,4 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
         return errorEntity;
     }
 
-    @Override
-    public void setCallback(NetworkCallback networkCallback) {
-        this.networkCallback = networkCallback;
-    }
 }

@@ -16,21 +16,10 @@ public class GetOrdersUseCase extends UseCase<Loads, Void> {
     }
 
     @Override
-    public void execute() {
-        ordersDataRepository.setDomainCallback(domainCallback);
-        ordersDataRepository.getOrders();
-    }
-
-    @Override
-    public void addCallback(UseCaseCallback<Loads> useCaseCallback) {
+    public void execute(UseCaseCallback<Loads> useCaseCallback) {
         this.useCaseCallback = useCaseCallback;
+        ordersDataRepository.getOrders(domainCallback);
     }
-
-    @Override
-    public void stopCallback() {
-        this.useCaseCallback = null;
-    }
-
 
     private final DomainCallback domainCallback = new DomainCallback() {
         @Override

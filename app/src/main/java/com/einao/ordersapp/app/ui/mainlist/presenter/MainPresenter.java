@@ -1,7 +1,5 @@
 package com.einao.ordersapp.app.ui.mainlist.presenter;
 
-import android.util.Log;
-
 import com.einao.ordersapp.app.ui.common.Presenter;
 import com.einao.ordersapp.app.ui.mainlist.view.MainView;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
@@ -25,39 +23,45 @@ public class MainPresenter extends Presenter<MainView> {
 
     @Override
     public void start() {
-        ordersUserCase.addCallback(useCaseCallback);
         getOrders();
     }
 
-    @Override
-    public void stop() {
-        ordersUserCase.stopCallback();
-    }
-
     public void getOrders() {
-        ordersUserCase.execute();
+        ordersUserCase.execute(useCaseCallback);
     }
 
     private final UseCaseCallback<Loads> useCaseCallback = new UseCaseCallback<Loads>() {
         @Override
         public void onError(Error error) {
             if (!existView()) return;
-            view.get().showMessage(error.getMessage());
+            ordersNotFetched(error);
         }
 
         @Override
         public void onSuccess(Loads data) {
             if (!existView()) return;
-            view.get().clearList();
-
-            LoadsViewModerMapper mapper = new LoadsViewModerMapper();
-            LoadsViewModel loadsViewModel = mapper.map(data);
-
-            Iterator<LoadViewModel> iterator = loadsViewModel.iterator();
-            while (iterator.hasNext()) {
-                if (!existView()) return;
-                view.get().addLoad(iterator.next());
-            }
+            ordersFetched(data);
         }
     };
+
+    private void ordersFetched(Loads data) {
+        view.get().clearList();
+
+        LoadsViewModerMapper mapper = new LoadsViewModerMapper();
+        LoadsViewModel loadsViewModel = mapper.map(data);
+
+        addLoadsToView(loadsViewModel);
+    }
+
+    private void addLoadsToView(LoadsViewModel loadsViewModel) {
+        Iterator<LoadViewModel> iterator = loadsViewModel.iterator();
+        while (iterator.hasNext()) {
+            if (!existView()) return;
+            view.get().addLoad(iterator.next());
+        }
+    }
+
+    private void ordersNotFetched(Error error) {
+        view.get().showMessage(error.getMessage());
+    }
 }
