@@ -26,7 +26,6 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
 
     private Long lastUpdate;
 
-
     public OrdersNetworkDataSourceFirebase() {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
