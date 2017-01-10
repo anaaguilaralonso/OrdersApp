@@ -1,11 +1,10 @@
 package com.einao.ordersapp.data.network.common;
 
-import com.einao.ordersapp.data.entities.LoadsEntity;
 import com.einao.ordersapp.domain.beans.Error;
 
-public interface RepositoryCallback {
+public interface RepositoryCallback<TEntity> {
 
-    void onSuccess(LoadsEntity loadsEntity);
+    void onSuccess(TEntity result);
 
     void onFailure(Error error);
 }

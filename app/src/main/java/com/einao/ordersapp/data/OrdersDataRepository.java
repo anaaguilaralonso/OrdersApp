@@ -40,7 +40,7 @@ public class OrdersDataRepository implements OrdersRepository {
 
     }
 
-    protected final RepositoryCallback repositoryCallback = new RepositoryCallback() {
+    protected final RepositoryCallback<LoadsEntity> repositoryCallback = new RepositoryCallback<LoadsEntity>() {
         @Override
         public void onSuccess(LoadsEntity loadsEntity) {
             LoadsEntityMapper loadsEntityMapper = new LoadsEntityMapper();
