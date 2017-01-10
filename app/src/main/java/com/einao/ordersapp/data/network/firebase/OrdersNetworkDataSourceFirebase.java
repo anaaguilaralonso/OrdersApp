@@ -16,8 +16,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.Iterator;
-
 
 public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource {
 
@@ -42,41 +40,18 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
     public void getOrders(RepositoryCallback repositoryCallback) {
         this.repositoryCallback = repositoryCallback;
 
-        myRef.child(EndpointConstants.RESOURCE_LOADS).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                Log.d(this.getClass().getName(), dataSnapshot.toString());
-
-                LoadsEntity loadsEntity = createLoadsEntity(dataSnapshot);
-                if (OrdersNetworkDataSourceFirebase.this.repositoryCallback == null) return;
-                OrdersNetworkDataSourceFirebase.this.repositoryCallback.onSuccess(loadsEntity);
-                // We usually update lastUpdate here but Firebase has its own database
-                // lastUpdate = timeProvider.getCurrentTimeInMiliseconds();
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(this.getClass().getName(), "Failed to read value.", error.toException());
-
-                Error errorEntity = createErrorEntity(error);
-                if (OrdersNetworkDataSourceFirebase.this.repositoryCallback == null) return;
-                OrdersNetworkDataSourceFirebase.this.repositoryCallback.onFailure(errorEntity);
-            }
-        });
+        myRef.child(EndpointConstants.RESOURCE_LOADS).addValueEventListener(ordersValueEventListener);
     }
 
     @NonNull
     private LoadsEntity createLoadsEntity(DataSnapshot dataSnapshot) {
         LoadsEntity loadsEntity = new LoadsEntity();
 
-        Iterator<DataSnapshot> iterator = dataSnapshot.getChildren().iterator();
-        while (iterator.hasNext()) {
-            LoadEntity loadEntity = iterator.next().getValue(LoadEntity.class);
+        for (DataSnapshot children : dataSnapshot.getChildren()) {
+            LoadEntity loadEntity = children.getValue(LoadEntity.class);
             loadsEntity.add(loadEntity);
         }
+        
         return loadsEntity;
     }
 
@@ -92,4 +67,37 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
     public Long getLastUpdate() {
         return lastUpdate;
     }
+
+    private void ordersFetched(DataSnapshot dataSnapshot) {
+        Log.d(this.getClass().getName(), dataSnapshot.toString());
+
+        LoadsEntity loadsEntity = createLoadsEntity(dataSnapshot);
+        if (OrdersNetworkDataSourceFirebase.this.repositoryCallback == null) return;
+        OrdersNetworkDataSourceFirebase.this.repositoryCallback.onSuccess(loadsEntity);
+        // We usually update lastUpdate here but Firebase has its own database
+        // lastUpdate = timeProvider.getCurrentTimeInMiliseconds();
+    }
+
+    private void ordersFetchCancelled(DatabaseError error) {
+        Log.w(this.getClass().getName(), "Failed to read value.", error.toException());
+
+        Error errorEntity = createErrorEntity(error);
+        if (OrdersNetworkDataSourceFirebase.this.repositoryCallback == null) return;
+        OrdersNetworkDataSourceFirebase.this.repositoryCallback.onFailure(errorEntity);
+    }
+
+
+    private ValueEventListener ordersValueEventListener = new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+            ordersFetched(dataSnapshot);
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+            ordersFetchCancelled(databaseError);
+        }
+
+
+    };
 }
