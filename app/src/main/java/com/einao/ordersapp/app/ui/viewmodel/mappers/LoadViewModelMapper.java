@@ -9,14 +9,14 @@ public class LoadViewModelMapper {
 
         LoadViewModel loadViewModel = new LoadViewModel();
 
-        loadViewModel.setOrigin_date(load.getOrigin_date());
+        loadViewModel.setOriginDate(load.getOriginDate());
         loadViewModel.setWeight(load.getWeight());
         loadViewModel.setPackageType(load.getPackageType());
-        loadViewModel.setDestination_date(load.getDestination_date());
+        loadViewModel.setDestinationDate(load.getDestinationDate());
         loadViewModel.setName(load.getName());
         loadViewModel.setStatus(load.getStatus());
         loadViewModel.setPrice(load.getPrice()+"€");
-        loadViewModel.setDestination_full_address(load.getDestination_full_address());
+        loadViewModel.setDestinationFullAddress(load.getDestinationFullAddress());
 
         return loadViewModel;
 

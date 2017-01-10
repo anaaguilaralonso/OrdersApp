@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -60,8 +59,8 @@ public class LoadView extends RelativeLayout {
 
     public void setLoadViewModel(LoadViewModel loadViewModel) {
         name.setText(loadViewModel.getName());
-        destination.setText(loadViewModel.getDestination_full_address());
-        destinationDate.setText(loadViewModel.getDestination_date());
+        destination.setText(loadViewModel.getDestinationFullAddress());
+        destinationDate.setText(loadViewModel.getDestinationDate());
         price.setText(loadViewModel.getPrice());
         status.setText(loadViewModel.getStatus().toString());
     }

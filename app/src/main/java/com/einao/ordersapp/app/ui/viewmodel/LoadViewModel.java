@@ -2,13 +2,13 @@ package com.einao.ordersapp.app.ui.viewmodel;
 
 public class LoadViewModel {
 
-    private String origin_date;
+    private String originDate;
 
     private Integer weight;
 
     private String packageType;
 
-    private String destination_date;
+    private String destinationDate;
 
     private String name;
 
@@ -16,15 +16,15 @@ public class LoadViewModel {
 
     private String price;
 
-    private String destination_full_address;
+    private String destinationFullAddress;
 
 
-    public String getOrigin_date() {
-        return origin_date;
+    public String getOriginDate() {
+        return originDate;
     }
 
-    public void setOrigin_date(String origin_date) {
-        this.origin_date = origin_date;
+    public void setOriginDate(String originDate) {
+        this.originDate = originDate;
     }
 
     public Integer getWeight() {
@@ -43,12 +43,12 @@ public class LoadViewModel {
         this.packageType = packageType;
     }
 
-    public String getDestination_date() {
-        return destination_date;
+    public String getDestinationDate() {
+        return destinationDate;
     }
 
-    public void setDestination_date(String destination_date) {
-        this.destination_date = destination_date;
+    public void setDestinationDate(String destinationDate) {
+        this.destinationDate = destinationDate;
     }
 
     public String getName() {
@@ -75,11 +75,11 @@ public class LoadViewModel {
         this.price = price;
     }
 
-    public String getDestination_full_address() {
-        return destination_full_address;
+    public String getDestinationFullAddress() {
+        return destinationFullAddress;
     }
 
-    public void setDestination_full_address(String destination_full_address) {
-        this.destination_full_address = destination_full_address;
+    public void setDestinationFullAddress(String destinationFullAddress) {
+        this.destinationFullAddress = destinationFullAddress;
     }
 }
