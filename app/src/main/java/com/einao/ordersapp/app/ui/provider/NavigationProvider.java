@@ -7,7 +7,7 @@ import com.einao.ordersapp.domain.providers.Navigator;
 
 public class NavigationProvider {
 
-    Activity activity;
+    private final Activity activity;
 
     public NavigationProvider(Activity activity) {
         this.activity = activity;

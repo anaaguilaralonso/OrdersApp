@@ -25,8 +25,8 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
 
     private final DatabaseReference myRef;
 
-    private Long lastUpdate;
-    private TimeProvider timeProvider;
+    private final Long lastUpdate;
+    private final TimeProvider timeProvider;
 
     public OrdersNetworkDataSourceFirebase(TimeProvider timeProvider) {
 

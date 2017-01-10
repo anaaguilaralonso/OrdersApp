@@ -13,10 +13,10 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class FirebaseAuthenticator implements Authenticator {
 
-    private FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+    private final FirebaseAuth mAuth;
+    private final FirebaseAuth.AuthStateListener mAuthListener;
 
-    private Activity activity;
+    private final Activity activity;
 
     public FirebaseAuthenticator(Activity activity) {
         this.activity = activity;

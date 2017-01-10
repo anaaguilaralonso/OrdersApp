@@ -9,12 +9,12 @@ import java.util.Iterator;
 
 public class LoadsEntityMapper {
 
-    public Loads map(LoadsEntity loadsEntity){
+    public Loads map(LoadsEntity loadsEntity) {
         Loads loads = new Loads();
 
         LoadEntityMapper mapper = new LoadEntityMapper();
         Iterator<LoadEntity> iterator = loadsEntity.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             Load load = mapper.map(iterator.next());
             loads.add(load);
         }

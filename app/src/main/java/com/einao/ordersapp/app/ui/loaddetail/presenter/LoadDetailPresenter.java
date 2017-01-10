@@ -7,7 +7,7 @@ import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 
 public class LoadDetailPresenter extends Presenter<LoadDetailView> {
 
-    LoadViewModel loadViewModel;
+    private LoadViewModel loadViewModel;
 
     public LoadDetailPresenter(LoadDetailView loadDetailView) {
         super(loadDetailView);

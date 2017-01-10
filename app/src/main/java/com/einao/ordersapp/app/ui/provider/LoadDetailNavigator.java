@@ -11,7 +11,7 @@ import com.einao.ordersapp.domain.providers.Navigator;
 
 public class LoadDetailNavigator implements Navigator<LoadViewModel> {
 
-    Activity activity;
+    private final Activity activity;
 
     public LoadDetailNavigator(Activity activity) {
         this.activity = activity;
