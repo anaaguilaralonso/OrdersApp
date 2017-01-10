@@ -40,7 +40,7 @@ public class MainPresenter extends Presenter<MainView> {
 
     protected final UseCaseCallback<Loads> useCaseCallback = new UseCaseCallback<Loads>() {
         @Override
-        public void onError(Error error) {
+        public void onFailure(Error error) {
             if (!existView()) return;
             ordersNotFetched(error);
         }

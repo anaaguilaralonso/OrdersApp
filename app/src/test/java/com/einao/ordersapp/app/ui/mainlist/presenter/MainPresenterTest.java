@@ -67,7 +67,7 @@ public class MainPresenterTest {
         Mockito.doAnswer(new Answer() {
             @Override
             public Object answer(InvocationOnMock invocation) throws Throwable {
-                mainPresenter.useCaseCallback.onError(errorObjectMother.getSimpleError());
+                mainPresenter.useCaseCallback.onFailure(errorObjectMother.getSimpleError());
                 return null;
             }
         }).when(getOrdersUseCase).execute(mainPresenter.useCaseCallback);
