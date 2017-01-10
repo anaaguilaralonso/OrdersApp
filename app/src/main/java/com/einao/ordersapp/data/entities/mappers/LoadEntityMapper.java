@@ -5,7 +5,7 @@ import com.einao.ordersapp.domain.beans.Load;
 
 public class LoadEntityMapper {
 
-    public Load map (LoadEntity loadEntity){
+    public Load map(LoadEntity loadEntity) {
 
         Load.Builder builder = new Load.Builder();
 

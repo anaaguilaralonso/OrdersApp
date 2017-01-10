@@ -21,7 +21,7 @@ public class MainPresenter extends Presenter<MainView> {
     private final TextFormatter textFormatter;
 
 
-    public MainPresenter(MainView mainView, Navigator navigator, GetOrdersUseCase ordersUserCase,
+    public MainPresenter(MainView mainView, Navigator<LoadViewModel> navigator, GetOrdersUseCase ordersUserCase,
                          TextFormatter textFormatter) {
         super(mainView);
         this.ordersUserCase = ordersUserCase;

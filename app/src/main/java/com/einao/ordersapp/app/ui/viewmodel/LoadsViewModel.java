@@ -1,7 +1,5 @@
 package com.einao.ordersapp.app.ui.viewmodel;
 
-import com.einao.ordersapp.domain.beans.Load;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

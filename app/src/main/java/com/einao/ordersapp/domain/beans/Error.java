@@ -2,9 +2,9 @@ package com.einao.ordersapp.domain.beans;
 
 public class Error {
 
-    String message;
+    private String message;
 
-    int code;
+    private int code;
 
     public String getMessage() {
         return message;

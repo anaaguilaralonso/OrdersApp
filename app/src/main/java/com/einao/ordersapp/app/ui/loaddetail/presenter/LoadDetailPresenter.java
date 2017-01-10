@@ -7,11 +7,13 @@ import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 
 public class LoadDetailPresenter extends Presenter<LoadDetailView> {
 
-    LoadViewModel loadViewModel;
+    private LoadViewModel loadViewModel;
 
-    public LoadDetailPresenter(LoadDetailView loadDetailView) {
+    public LoadDetailPresenter(LoadDetailView loadDetailView, LoadViewModel loadViewModel) {
         super(loadDetailView);
+        this.loadViewModel = loadViewModel;
     }
+
 
     @Override
     public void start() {
@@ -24,7 +26,4 @@ public class LoadDetailPresenter extends Presenter<LoadDetailView> {
         view.get().setViewInformation(loadViewModel);
     }
 
-    public void setLoad(LoadViewModel loadViewModel) {
-        this.loadViewModel = loadViewModel;
-    }
 }

@@ -19,7 +19,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     @BindView(R.id.loads_list)
     RecyclerView loadsRecycler;
 
-    LoadsListAdapter loadsListAdapter;
+    private LoadsListAdapter loadsListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

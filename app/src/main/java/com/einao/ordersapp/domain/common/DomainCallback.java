@@ -1,10 +1,9 @@
 package com.einao.ordersapp.domain.common;
 
 import com.einao.ordersapp.domain.beans.Error;
-import com.einao.ordersapp.domain.beans.Loads;
 
-public interface DomainCallback {
+public interface DomainCallback<TDomain> {
     void onFailure(Error error);
 
-    void onSuccess(Loads loads);
+    void onSuccess(TDomain result);
 }

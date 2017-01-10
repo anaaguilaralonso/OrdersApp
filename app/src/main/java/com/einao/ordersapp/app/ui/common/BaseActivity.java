@@ -36,8 +36,8 @@ public abstract class BaseActivity<T extends Presenter> extends AppCompatActivit
         ButterKnife.bind(this);
 
         useCaseProvider = ((App) getApplication()).getUseCaseProvider();
-        navigationProvider = new NavigationProvider(this);
-        textFormatter = new OrdersTextFormatter();
+        navigationProvider = ((App) getApplication()).getNavigationProvider(this);
+        textFormatter = ((App)getApplication()).getTextFormatter();
 
         firebaseAuthenticator = new FirebaseAuthenticator(this);
         firebaseAuthenticator.authenticate(

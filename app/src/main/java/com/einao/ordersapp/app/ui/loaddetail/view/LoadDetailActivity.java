@@ -22,16 +22,14 @@ public class LoadDetailActivity extends BaseActivity<LoadDetailPresenter> implem
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Intent intent = getIntent();
-        LoadViewModel load = intent.getParcelableExtra(ExtraConstants.LOAD_EXTRA);
-        presenter.setLoad(load);
-
         presenter.start();
     }
 
     @Override
     public LoadDetailPresenter initPresenter() {
-        return new LoadDetailPresenter(this);
+        Intent intent = getIntent();
+        LoadViewModel load = intent.getParcelableExtra(ExtraConstants.LOAD_EXTRA);
+        return new LoadDetailPresenter(this, load);
     }
 
     @Override

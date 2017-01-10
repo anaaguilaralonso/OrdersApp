@@ -5,9 +5,9 @@ import com.einao.ordersapp.domain.providers.TimeProvider;
 
 public class ShortDataBasePolicy implements DataBasePolicy {
 
-    public static final int SHORT_VALID_TIME_MILLISECONDS = 10000;
+    private final int SHORT_VALID_TIME_MILLISECONDS = 10000;
 
-    TimeProvider timeProvider;
+    private final TimeProvider timeProvider;
 
     public ShortDataBasePolicy(TimeProvider timeProvider) {
         this.timeProvider = timeProvider;

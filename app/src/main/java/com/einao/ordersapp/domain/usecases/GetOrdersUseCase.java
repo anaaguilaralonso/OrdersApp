@@ -6,7 +6,7 @@ import com.einao.ordersapp.domain.beans.Error;
 import com.einao.ordersapp.domain.beans.Loads;
 import com.einao.ordersapp.domain.common.DomainCallback;
 
-public class GetOrdersUseCase extends UseCase<Loads, Void> {
+public class GetOrdersUseCase extends UseCase<Loads> {
 
     private final OrdersRepository ordersDataRepository;
     private UseCaseCallback<Loads> useCaseCallback;
@@ -21,7 +21,7 @@ public class GetOrdersUseCase extends UseCase<Loads, Void> {
         ordersDataRepository.getOrders(domainCallback);
     }
 
-    protected final DomainCallback domainCallback = new DomainCallback() {
+    protected final DomainCallback<Loads> domainCallback = new DomainCallback<Loads>() {
         @Override
         public void onFailure(Error error) {
             useCaseCallback.onFailure(error);

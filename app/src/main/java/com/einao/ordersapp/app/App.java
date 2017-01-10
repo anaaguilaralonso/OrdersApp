@@ -1,5 +1,6 @@
 package com.einao.ordersapp.app;
 
+import android.app.Activity;
 import android.app.Application;
 
 import com.einao.ordersapp.app.policy.ShortDataBasePolicy;
@@ -8,6 +9,9 @@ import com.einao.ordersapp.app.provider.RepositoryProvider;
 import com.einao.ordersapp.app.provider.StorageDataSourceProvider;
 import com.einao.ordersapp.app.provider.UseCaseProvider;
 import com.einao.ordersapp.app.ui.provider.AndroidTimeProvider;
+import com.einao.ordersapp.app.ui.provider.NavigationProvider;
+import com.einao.ordersapp.app.ui.provider.OrdersTextFormatter;
+import com.einao.ordersapp.domain.providers.TextFormatter;
 import com.einao.ordersapp.domain.providers.TimeProvider;
 
 public class App extends Application {
@@ -34,5 +38,13 @@ public class App extends Application {
 
     public UseCaseProvider getUseCaseProvider() {
         return useCaseProvider;
+    }
+
+    public TextFormatter getTextFormatter() {
+        return new OrdersTextFormatter();
+    }
+
+    public NavigationProvider getNavigationProvider(Activity activity) {
+        return new NavigationProvider(activity);
     }
 }
