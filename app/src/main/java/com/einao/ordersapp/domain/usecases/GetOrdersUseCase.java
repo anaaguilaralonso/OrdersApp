@@ -21,7 +21,7 @@ public class GetOrdersUseCase extends UseCase<Loads> {
         ordersDataRepository.getOrders(domainCallback);
     }
 
-    protected final DomainCallback domainCallback = new DomainCallback() {
+    protected final DomainCallback<Loads> domainCallback = new DomainCallback<Loads>() {
         @Override
         public void onFailure(Error error) {
             useCaseCallback.onFailure(error);

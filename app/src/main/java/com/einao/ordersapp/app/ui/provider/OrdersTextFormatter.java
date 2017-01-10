@@ -5,14 +5,15 @@ import com.einao.ordersapp.domain.providers.TextFormatter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 
 public class OrdersTextFormatter implements TextFormatter {
 
     @Override
     public String getDateDisplay(String stringDate) {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mmZ");
-        SimpleDateFormat viewFormatter = new SimpleDateFormat("dd/MM/yy 'at' HH:mm");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mmZ", Locale.getDefault());
+        SimpleDateFormat viewFormatter = new SimpleDateFormat("dd/MM/yy 'at' HH:mm", Locale.getDefault());
 
         String formattedDate;
         try {
