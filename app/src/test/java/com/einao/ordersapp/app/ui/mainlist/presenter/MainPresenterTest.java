@@ -1,6 +1,7 @@
 package com.einao.ordersapp.app.ui.mainlist.presenter;
 
 import com.einao.ordersapp.app.ui.mainlist.view.MainView;
+import com.einao.ordersapp.app.ui.provider.TextFormatter;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 import com.einao.ordersapp.domain.beans.Loads;
 import com.einao.ordersapp.domain.common.ErrorObjectMother;
@@ -29,13 +30,16 @@ public class MainPresenterTest {
     @Mock
     private GetOrdersUseCase getOrdersUseCase;
 
+    @Mock
+    private TextFormatter textFormatter;
+
     private MainPresenter mainPresenter;
     private LoadsObjectMother loadsObjectMother;
     private ErrorObjectMother errorObjectMother;
 
     @Before
     public void init() {
-        mainPresenter = new MainPresenter(mainView, navigator, getOrdersUseCase);
+        mainPresenter = new MainPresenter(mainView, navigator, getOrdersUseCase, textFormatter);
 
         loadsObjectMother = new LoadsObjectMother();
         errorObjectMother = new ErrorObjectMother();

@@ -2,9 +2,10 @@ package com.einao.ordersapp.app.ui.mainlist.presenter;
 
 import com.einao.ordersapp.app.ui.common.Presenter;
 import com.einao.ordersapp.app.ui.mainlist.view.MainView;
+import com.einao.ordersapp.app.ui.provider.TextFormatter;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 import com.einao.ordersapp.app.ui.viewmodel.LoadsViewModel;
-import com.einao.ordersapp.app.ui.viewmodel.mappers.LoadsViewModerMapper;
+import com.einao.ordersapp.app.ui.viewmodel.mappers.LoadsViewModelMapper;
 import com.einao.ordersapp.domain.UseCaseCallback;
 import com.einao.ordersapp.domain.beans.Error;
 import com.einao.ordersapp.domain.beans.Loads;
@@ -17,11 +18,15 @@ public class MainPresenter extends Presenter<MainView> {
 
     private final GetOrdersUseCase ordersUserCase;
     private final Navigator<LoadViewModel> navigator;
+    private final TextFormatter textFormatter;
 
-    public MainPresenter(MainView mainView, Navigator navigator, GetOrdersUseCase ordersUserCase) {
+
+    public MainPresenter(MainView mainView, Navigator navigator, GetOrdersUseCase ordersUserCase,
+                         TextFormatter textFormatter) {
         super(mainView);
         this.ordersUserCase = ordersUserCase;
         this.navigator = navigator;
+        this.textFormatter = textFormatter;
     }
 
     @Override
@@ -50,7 +55,7 @@ public class MainPresenter extends Presenter<MainView> {
     private void ordersFetched(Loads data) {
         view.get().clearList();
 
-        LoadsViewModerMapper mapper = new LoadsViewModerMapper();
+        LoadsViewModelMapper mapper = new LoadsViewModelMapper(textFormatter);
         LoadsViewModel loadsViewModel = mapper.map(data);
 
         addLoadsToView(loadsViewModel);
