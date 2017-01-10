@@ -8,10 +8,12 @@ import android.widget.Toast;
 
 import com.einao.ordersapp.app.App;
 import com.einao.ordersapp.app.common.AuthenticationCredentials;
-import com.einao.ordersapp.app.ui.provider.NavigationProvider;
 import com.einao.ordersapp.app.provider.UseCaseProvider;
+import com.einao.ordersapp.app.ui.provider.NavigationProvider;
+import com.einao.ordersapp.app.ui.provider.OrdersTextFormatter;
 import com.einao.ordersapp.data.network.firebase.FirebaseAuthenticator;
 import com.einao.ordersapp.domain.auth.Authenticator;
+import com.einao.ordersapp.domain.providers.TextFormatter;
 
 import butterknife.ButterKnife;
 
@@ -23,6 +25,7 @@ public abstract class BaseActivity<T extends Presenter> extends AppCompatActivit
 
     protected UseCaseProvider useCaseProvider;
     protected NavigationProvider navigationProvider;
+    protected TextFormatter textFormatter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public abstract class BaseActivity<T extends Presenter> extends AppCompatActivit
 
         useCaseProvider = ((App) getApplication()).getUseCaseProvider();
         navigationProvider = new NavigationProvider(this);
+        textFormatter = new OrdersTextFormatter();
 
         firebaseAuthenticator = new FirebaseAuthenticator(this);
         firebaseAuthenticator.authenticate(

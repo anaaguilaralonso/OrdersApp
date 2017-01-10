@@ -11,6 +11,7 @@ import com.einao.ordersapp.domain.beans.Loads;
 import com.einao.ordersapp.domain.common.DomainCallback;
 import com.einao.ordersapp.domain.policy.DataBasePolicy;
 
+
 public class OrdersDataRepository implements OrdersRepository {
 
     private final OrdersNetworkDataSource networkDataSource;
@@ -30,7 +31,8 @@ public class OrdersDataRepository implements OrdersRepository {
     public void getOrders(DomainCallback domainCallback) {
         this.domainCallback = domainCallback;
 
-        if (dataBasePolicy.isValid(networkDataSource.getLastUpdate())) {
+        Long lastUpdate = networkDataSource.getLastUpdate();
+        if (dataBasePolicy.isValid(lastUpdate)) {
             storageDataSource.getOrders(repositoryCallback);
         } else {
             networkDataSource.getOrders(repositoryCallback);
@@ -38,7 +40,7 @@ public class OrdersDataRepository implements OrdersRepository {
 
     }
 
-    private final RepositoryCallback repositoryCallback = new RepositoryCallback() {
+    protected final RepositoryCallback repositoryCallback = new RepositoryCallback() {
         @Override
         public void onSuccess(LoadsEntity loadsEntity) {
             LoadsEntityMapper loadsEntityMapper = new LoadsEntityMapper();

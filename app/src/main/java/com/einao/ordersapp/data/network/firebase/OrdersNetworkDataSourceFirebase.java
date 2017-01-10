@@ -9,6 +9,7 @@ import com.einao.ordersapp.data.network.OrdersNetworkDataSource;
 import com.einao.ordersapp.data.network.common.EndpointConstants;
 import com.einao.ordersapp.data.network.common.RepositoryCallback;
 import com.einao.ordersapp.domain.beans.Error;
+import com.einao.ordersapp.domain.providers.TimeProvider;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,15 +26,16 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
     private final DatabaseReference myRef;
 
     private Long lastUpdate;
+    private TimeProvider timeProvider;
 
-
-    public OrdersNetworkDataSourceFirebase() {
+    public OrdersNetworkDataSourceFirebase(TimeProvider timeProvider) {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         database.setPersistenceEnabled(true);
         myRef = database.getReference();
 
         lastUpdate = 0L;
+        this.timeProvider = timeProvider;
     }
 
     @Override
@@ -51,7 +53,7 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
                 if (OrdersNetworkDataSourceFirebase.this.repositoryCallback == null) return;
                 OrdersNetworkDataSourceFirebase.this.repositoryCallback.onSuccess(loadsEntity);
                 // We usually update lastUpdate here but Firebase has its own database
-                // lastUpdate = System.nanoTime() / (1000*1000);
+                // lastUpdate = timeProvider.getCurrentTimeInMiliseconds();
             }
 
             @Override

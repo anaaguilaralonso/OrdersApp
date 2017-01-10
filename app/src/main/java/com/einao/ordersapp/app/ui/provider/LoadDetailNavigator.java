@@ -8,6 +8,7 @@ import com.einao.ordersapp.app.ui.loaddetail.view.LoadDetailActivity;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 import com.einao.ordersapp.domain.providers.Navigator;
 
+
 public class LoadDetailNavigator implements Navigator<LoadViewModel> {
 
     Activity activity;
