@@ -1,6 +1,9 @@
 package com.einao.ordersapp.app.ui.viewmodel;
 
-public class LoadViewModel {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class LoadViewModel implements Parcelable {
 
     private String originDate;
 
@@ -82,4 +85,47 @@ public class LoadViewModel {
     public void setDestinationFullAddress(String destinationFullAddress) {
         this.destinationFullAddress = destinationFullAddress;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.originDate);
+        dest.writeValue(this.weight);
+        dest.writeString(this.packageType);
+        dest.writeString(this.destinationDate);
+        dest.writeString(this.name);
+        dest.writeValue(this.status);
+        dest.writeString(this.price);
+        dest.writeString(this.destinationFullAddress);
+    }
+
+    public LoadViewModel() {
+    }
+
+    protected LoadViewModel(Parcel in) {
+        this.originDate = in.readString();
+        this.weight = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.packageType = in.readString();
+        this.destinationDate = in.readString();
+        this.name = in.readString();
+        this.status = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.price = in.readString();
+        this.destinationFullAddress = in.readString();
+    }
+
+    public static final Parcelable.Creator<LoadViewModel> CREATOR = new Parcelable.Creator<LoadViewModel>() {
+        @Override
+        public LoadViewModel createFromParcel(Parcel source) {
+            return new LoadViewModel(source);
+        }
+
+        @Override
+        public LoadViewModel[] newArray(int size) {
+            return new LoadViewModel[size];
+        }
+    };
 }
