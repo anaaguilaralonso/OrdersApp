@@ -1,6 +1,6 @@
 package com.einao.ordersapp.domain.usecases;
 
-import com.einao.ordersapp.data.OrdersDataRepository;
+import com.einao.ordersapp.domain.OrdersRepository;
 import com.einao.ordersapp.domain.UseCaseCallback;
 import com.einao.ordersapp.domain.beans.Error;
 import com.einao.ordersapp.domain.beans.Loads;
@@ -8,10 +8,10 @@ import com.einao.ordersapp.domain.common.DomainCallback;
 
 public class GetOrdersUseCase extends UseCase<Loads, Void> {
 
-    private final OrdersDataRepository ordersDataRepository;
+    private final OrdersRepository ordersDataRepository;
     private UseCaseCallback<Loads> useCaseCallback;
 
-    public GetOrdersUseCase(OrdersDataRepository ordersDataRepository) {
+    public GetOrdersUseCase(OrdersRepository ordersDataRepository) {
         this.ordersDataRepository = ordersDataRepository;
     }
 

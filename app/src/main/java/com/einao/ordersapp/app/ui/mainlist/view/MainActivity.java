@@ -8,11 +8,8 @@ import com.einao.ordersapp.R;
 import com.einao.ordersapp.app.ui.common.BaseActivity;
 import com.einao.ordersapp.app.ui.mainlist.adapter.LoadsListAdapter;
 import com.einao.ordersapp.app.ui.mainlist.presenter.MainPresenter;
-import com.einao.ordersapp.app.ui.provider.LoadDetailNavigator;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
-import com.einao.ordersapp.data.OrdersDataRepository;
-import com.einao.ordersapp.data.network.firebase.OrdersNetworkDataSourceFirebase;
-import com.einao.ordersapp.data.storage.OrdersStorageDataSourceFirebase;
+import com.einao.ordersapp.domain.providers.Navigator;
 import com.einao.ordersapp.domain.usecases.GetOrdersUseCase;
 
 import butterknife.BindView;
@@ -44,9 +41,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     @Override
     public MainPresenter initPresenter() {
-        return new MainPresenter(this, new LoadDetailNavigator(this), new GetOrdersUseCase(new OrdersDataRepository(new
-                OrdersNetworkDataSourceFirebase(),
-                new OrdersStorageDataSourceFirebase())));
+        Navigator<LoadViewModel> loadDetailNavigationProvider = navigationProvider.getLoadDetailNavigationProvider();
+        GetOrdersUseCase ordersUseCase = useCaseProvider.getOrdersUseCase();
+        return new MainPresenter(this, loadDetailNavigationProvider,
+                ordersUseCase);
     }
 
     @Override
