@@ -51,7 +51,7 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
             LoadEntity loadEntity = children.getValue(LoadEntity.class);
             loadsEntity.add(loadEntity);
         }
-        
+
         return loadsEntity;
     }
 
