@@ -1,9 +1,10 @@
 package com.einao.ordersapp.app.ui.viewmodel.mappers;
 
-import com.einao.ordersapp.app.ui.provider.TextFormatter;
+import com.einao.ordersapp.app.ui.provider.OrdersTextFormatter;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 import com.einao.ordersapp.domain.beans.Load;
 import com.einao.ordersapp.domain.common.LoadsObjectMother;
+import com.einao.ordersapp.domain.providers.TextFormatter;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -19,7 +20,7 @@ public class LoadViewModelMapperTest {
 
     @Before
     public void init() {
-        TextFormatter textFormatter = new TextFormatter();
+        TextFormatter textFormatter = new OrdersTextFormatter();
         LoadViewModelMapper loadViewModelMapper = new LoadViewModelMapper(textFormatter);
 
         LoadsObjectMother loadsObjectMother = new LoadsObjectMother();

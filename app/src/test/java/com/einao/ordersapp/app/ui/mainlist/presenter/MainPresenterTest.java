@@ -1,12 +1,12 @@
 package com.einao.ordersapp.app.ui.mainlist.presenter;
 
 import com.einao.ordersapp.app.ui.mainlist.view.MainView;
-import com.einao.ordersapp.app.ui.provider.TextFormatter;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 import com.einao.ordersapp.domain.beans.Loads;
 import com.einao.ordersapp.domain.common.ErrorObjectMother;
 import com.einao.ordersapp.domain.common.LoadsObjectMother;
 import com.einao.ordersapp.domain.providers.Navigator;
+import com.einao.ordersapp.domain.providers.TextFormatter;
 import com.einao.ordersapp.domain.usecases.GetOrdersUseCase;
 
 import org.junit.Before;

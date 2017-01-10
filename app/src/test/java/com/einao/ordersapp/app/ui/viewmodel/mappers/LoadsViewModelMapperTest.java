@@ -1,9 +1,9 @@
 package com.einao.ordersapp.app.ui.viewmodel.mappers;
 
-import com.einao.ordersapp.app.ui.provider.TextFormatter;
 import com.einao.ordersapp.app.ui.viewmodel.LoadsViewModel;
 import com.einao.ordersapp.domain.beans.Loads;
 import com.einao.ordersapp.domain.common.LoadsObjectMother;
+import com.einao.ordersapp.domain.providers.TextFormatter;
 
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,10 +1,10 @@
 package com.einao.ordersapp.app.ui.viewmodel.mappers;
 
-import com.einao.ordersapp.app.ui.provider.TextFormatter;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 import com.einao.ordersapp.app.ui.viewmodel.LoadsViewModel;
 import com.einao.ordersapp.domain.beans.Load;
 import com.einao.ordersapp.domain.beans.Loads;
+import com.einao.ordersapp.domain.providers.TextFormatter;
 
 import java.util.Iterator;
 

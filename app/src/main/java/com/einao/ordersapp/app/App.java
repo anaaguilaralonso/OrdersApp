@@ -7,6 +7,8 @@ import com.einao.ordersapp.app.provider.NetworkDataSourceProvider;
 import com.einao.ordersapp.app.provider.RepositoryProvider;
 import com.einao.ordersapp.app.provider.StorageDataSourceProvider;
 import com.einao.ordersapp.app.provider.UseCaseProvider;
+import com.einao.ordersapp.app.ui.provider.AndroidTimeProvider;
+import com.einao.ordersapp.domain.providers.TimeProvider;
 
 public class App extends Application {
 
@@ -19,10 +21,12 @@ public class App extends Application {
         NetworkDataSourceProvider networkDataSourceProvider = new NetworkDataSourceProvider();
         StorageDataSourceProvider storageDataSourceProvider = new StorageDataSourceProvider();
 
-        ShortDataBasePolicy dataBasePolicy = new ShortDataBasePolicy();
+        TimeProvider timeProvider = new AndroidTimeProvider();
+        ShortDataBasePolicy dataBasePolicy = new ShortDataBasePolicy(timeProvider);
 
         RepositoryProvider repositoryProvider =
-                new RepositoryProvider(networkDataSourceProvider, storageDataSourceProvider, dataBasePolicy);
+                new RepositoryProvider(networkDataSourceProvider, storageDataSourceProvider, dataBasePolicy,
+                        timeProvider);
 
         useCaseProvider = new UseCaseProvider(repositoryProvider);
 

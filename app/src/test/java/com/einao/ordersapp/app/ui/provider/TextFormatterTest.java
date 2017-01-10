@@ -1,5 +1,7 @@
 package com.einao.ordersapp.app.ui.provider;
 
+import com.einao.ordersapp.domain.providers.TextFormatter;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +15,7 @@ public class TextFormatterTest {
 
     @Before
     public void init() {
-        textFormatter = new TextFormatter();
+        textFormatter = new OrdersTextFormatter();
     }
 
     @Test
