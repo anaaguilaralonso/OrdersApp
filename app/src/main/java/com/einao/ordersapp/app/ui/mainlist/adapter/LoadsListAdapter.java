@@ -43,10 +43,12 @@ public class LoadsListAdapter extends RecyclerView.Adapter<LoadViewHolder> {
 
     public void add(LoadViewModel load) {
         loadsViewModel.add(load);
+        notifyItemInserted(loadsViewModel.getCount() - 1);
     }
 
     public void clear() {
         loadsViewModel.deleteAll();
+        notifyDataSetChanged();
     }
 
     public interface OnLoadClickListener {

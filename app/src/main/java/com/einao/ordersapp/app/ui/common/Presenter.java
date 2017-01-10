@@ -1,5 +1,7 @@
 package com.einao.ordersapp.app.ui.common;
 
+import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
+
 import java.lang.ref.WeakReference;
 
 public abstract class Presenter<View> {
@@ -15,5 +17,4 @@ public abstract class Presenter<View> {
     public boolean existView() {
         return view.get() != null;
     }
-
 }

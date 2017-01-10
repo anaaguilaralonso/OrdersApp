@@ -28,9 +28,6 @@ public class LoadView extends RelativeLayout {
     @BindView(R.id.destinationDate)
     TextView destinationDate;
 
-    @BindView(R.id.status)
-    TextView status;
-
     public LoadView(Context context) {
         super(context);
         setup();
@@ -62,6 +59,5 @@ public class LoadView extends RelativeLayout {
         destination.setText(loadViewModel.getDestinationFullAddress());
         destinationDate.setText(loadViewModel.getDestinationDate());
         price.setText(loadViewModel.getPrice());
-        status.setText(String.valueOf(loadViewModel.getStatus()));
     }
 }

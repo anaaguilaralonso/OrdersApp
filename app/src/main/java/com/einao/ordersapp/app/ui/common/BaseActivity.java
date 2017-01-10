@@ -3,6 +3,7 @@ package com.einao.ordersapp.app.ui.common;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.einao.ordersapp.app.App;
@@ -53,6 +54,17 @@ public abstract class BaseActivity<T extends Presenter> extends AppCompatActivit
     protected void onStop() {
         super.onStop();
         firebaseAuthenticator.unregisterAuthenticator();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return onOptionsItemSelected(item);
+        }
     }
 
     public abstract T initPresenter();
