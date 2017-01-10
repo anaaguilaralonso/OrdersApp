@@ -1,14 +1,17 @@
 package com.einao.ordersapp.app.ui.viewmodel;
 
-public class LoadViewModel {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    private String origin_date;
+public class LoadViewModel implements Parcelable {
+
+    private String originDate;
 
     private Integer weight;
 
     private String packageType;
 
-    private String destination_date;
+    private String destinationDate;
 
     private String name;
 
@@ -16,15 +19,15 @@ public class LoadViewModel {
 
     private String price;
 
-    private String destination_full_address;
+    private String destinationFullAddress;
 
 
-    public String getOrigin_date() {
-        return origin_date;
+    public String getOriginDate() {
+        return originDate;
     }
 
-    public void setOrigin_date(String origin_date) {
-        this.origin_date = origin_date;
+    public void setOriginDate(String originDate) {
+        this.originDate = originDate;
     }
 
     public Integer getWeight() {
@@ -43,12 +46,12 @@ public class LoadViewModel {
         this.packageType = packageType;
     }
 
-    public String getDestination_date() {
-        return destination_date;
+    public String getDestinationDate() {
+        return destinationDate;
     }
 
-    public void setDestination_date(String destination_date) {
-        this.destination_date = destination_date;
+    public void setDestinationDate(String destinationDate) {
+        this.destinationDate = destinationDate;
     }
 
     public String getName() {
@@ -75,11 +78,54 @@ public class LoadViewModel {
         this.price = price;
     }
 
-    public String getDestination_full_address() {
-        return destination_full_address;
+    public String getDestinationFullAddress() {
+        return destinationFullAddress;
     }
 
-    public void setDestination_full_address(String destination_full_address) {
-        this.destination_full_address = destination_full_address;
+    public void setDestinationFullAddress(String destinationFullAddress) {
+        this.destinationFullAddress = destinationFullAddress;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.originDate);
+        dest.writeValue(this.weight);
+        dest.writeString(this.packageType);
+        dest.writeString(this.destinationDate);
+        dest.writeString(this.name);
+        dest.writeValue(this.status);
+        dest.writeString(this.price);
+        dest.writeString(this.destinationFullAddress);
+    }
+
+    public LoadViewModel() {
+    }
+
+    protected LoadViewModel(Parcel in) {
+        this.originDate = in.readString();
+        this.weight = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.packageType = in.readString();
+        this.destinationDate = in.readString();
+        this.name = in.readString();
+        this.status = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.price = in.readString();
+        this.destinationFullAddress = in.readString();
+    }
+
+    public static final Parcelable.Creator<LoadViewModel> CREATOR = new Parcelable.Creator<LoadViewModel>() {
+        @Override
+        public LoadViewModel createFromParcel(Parcel source) {
+            return new LoadViewModel(source);
+        }
+
+        @Override
+        public LoadViewModel[] newArray(int size) {
+            return new LoadViewModel[size];
+        }
+    };
 }

@@ -9,9 +9,7 @@ import com.einao.ordersapp.app.ui.common.BaseActivity;
 import com.einao.ordersapp.app.ui.mainlist.adapter.LoadsListAdapter;
 import com.einao.ordersapp.app.ui.mainlist.presenter.MainPresenter;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
-import com.einao.ordersapp.data.OrdersDataRepository;
-import com.einao.ordersapp.data.network.firebase.OrdersNetworkDataSourceFirebase;
-import com.einao.ordersapp.data.storage.OrdersStorageDataSourceFirebase;
+import com.einao.ordersapp.domain.providers.Navigator;
 import com.einao.ordersapp.domain.usecases.GetOrdersUseCase;
 
 import butterknife.BindView;
@@ -30,7 +28,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         loadsRecycler.setLayoutManager(layoutManager);
 
-        loadsListAdapter = new LoadsListAdapter();
+        loadsListAdapter = new LoadsListAdapter(onLoadClickListener);
         loadsRecycler.setAdapter(loadsListAdapter);
 
         presenter.start();
@@ -43,15 +41,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     @Override
     public MainPresenter initPresenter() {
-        return new MainPresenter(this, new GetOrdersUseCase(new OrdersDataRepository(new
-                OrdersNetworkDataSourceFirebase(),
-                new OrdersStorageDataSourceFirebase())));
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        presenter.stop();
+        Navigator<LoadViewModel> loadDetailNavigationProvider = navigationProvider.getLoadDetailNavigationProvider();
+        GetOrdersUseCase ordersUseCase = useCaseProvider.getOrdersUseCase();
+        return new MainPresenter(this, loadDetailNavigationProvider,
+                ordersUseCase);
     }
 
     @Override
@@ -63,4 +56,11 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     public void clearList() {
         loadsListAdapter.clear();
     }
+
+    private LoadsListAdapter.OnLoadClickListener onLoadClickListener = new LoadsListAdapter.OnLoadClickListener() {
+        @Override
+        public void onClick(LoadViewModel loadViewModel) {
+            presenter.onLoadClicked(loadViewModel);
+        }
+    };
 }

@@ -23,15 +23,10 @@ public class OrdersDataRepository implements OrdersRepository {
     }
 
     @Override
-    public void getOrders() {
-        networkDataSource.setCallback(networkCallback);
-        networkDataSource.getOrders();
-
-    }
-
-    @Override
-    public void setDomainCallback(DomainCallback domainCallback) {
+    public void getOrders(DomainCallback domainCallback) {
         this.domainCallback = domainCallback;
+        networkDataSource.getOrders(networkCallback);
+
     }
 
     private final NetworkCallback networkCallback = new NetworkCallback() {

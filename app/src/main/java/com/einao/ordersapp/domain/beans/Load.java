@@ -4,25 +4,25 @@ public class Load {
 
     private String shiper;
 
-    private String origin_date;
+    private String originDate;
 
     private Integer weight;
 
     private String packageType;
 
-    private String destination_date_end;
+    private String destinationDateEnd;
 
     private Integer size_width;
 
     private Integer distance;
 
-    private String destination_date;
+    private String destinationDate;
 
-    private String destination_companyName;
+    private String destinationCompanyName;
 
     private String name;
 
-    private Integer size_height;
+    private Integer sizeHeight;
 
     private String driver;
 
@@ -30,13 +30,13 @@ public class Load {
 
     private Integer status;
 
-    private Double origin_lon;
+    private Double originLon;
 
     private String origin;
 
-    private Double destination_lat;
+    private Double destinationLat;
 
-    private String origin_full_address;
+    private String originFullAddress;
 
     private Double origin_lat;
 
@@ -44,89 +44,89 @@ public class Load {
 
     private Integer price;
 
-    private String origin_companyName;
+    private String originCompanyName;
 
     private String freightType;
 
-    private Integer size_length;
+    private Integer sizeLength;
 
-    private String origin_contactName;
+    private String originContactName;
 
-    private String destination_full_address;
+    private String destinationFullAddress;
 
-    private Double destination_lon;
+    private Double destinationLon;
 
-    private String destination_contactName;
+    private String destinationContactName;
 
-    private String extra_info;
+    private String extraInfo;
 
-    private String origin_date_end;
+    private String originDateEnd;
 
     private Load(Builder builder) {
         shiper = builder.shiper;
-        origin_date = builder.origin_date;
+        originDate = builder.originDate;
         weight = builder.weight;
         packageType = builder.packageType;
-        destination_date_end = builder.destination_date_end;
-        size_width = builder.size_width;
+        destinationDateEnd = builder.destinationDateEnd;
+        size_width = builder.sizeWidth;
         distance = builder.distance;
-        destination_date = builder.destination_date;
-        destination_companyName = builder.destination_companyName;
+        destinationDate = builder.destinationDate;
+        destinationCompanyName = builder.destinationCompanyName;
         name = builder.name;
-        size_height = builder.size_height;
+        sizeHeight = builder.sizeHeight;
         driver = builder.driver;
         quantity = builder.quantity;
         status = builder.status;
-        origin_lon = builder.origin_lon;
+        originLon = builder.originLon;
         origin = builder.origin;
-        destination_lat = builder.destination_lat;
-        origin_full_address = builder.origin_full_address;
-        origin_lat = builder.origin_lat;
+        destinationLat = builder.destinationLat;
+        originFullAddress = builder.originFullAddress;
+        origin_lat = builder.originLat;
         destination = builder.destination;
         price = builder.price;
-        origin_companyName = builder.origin_companyName;
+        originCompanyName = builder.originCompanyName;
         freightType = builder.freightType;
-        size_length = builder.size_length;
-        origin_contactName = builder.origin_contactName;
-        destination_full_address = builder.destination_full_address;
-        destination_lon = builder.destination_lon;
-        destination_contactName = builder.destination_contactName;
-        extra_info = builder.extra_info;
-        origin_date_end = builder.origin_date_end;
+        sizeLength = builder.sizeLength;
+        originContactName = builder.originContactName;
+        destinationFullAddress = builder.destinationFullAddress;
+        destinationLon = builder.destinationLon;
+        destinationContactName = builder.destinationContactName;
+        extraInfo = builder.extraInfo;
+        originDateEnd = builder.originDateEnd;
     }
 
 
     public static final class Builder {
         private String shiper;
-        private String origin_date;
+        private String originDate;
         private Integer weight;
         private String packageType;
-        private String destination_date_end;
-        private Integer size_width;
+        private String destinationDateEnd;
+        private Integer sizeWidth;
         private Integer distance;
-        private String destination_date;
-        private String destination_companyName;
+        private String destinationDate;
+        private String destinationCompanyName;
         private String name;
-        private Integer size_height;
+        private Integer sizeHeight;
         private String driver;
         private Integer quantity;
         private Integer status;
-        private Double origin_lon;
+        private Double originLon;
         private String origin;
-        private Double destination_lat;
-        private String origin_full_address;
-        private Double origin_lat;
+        private Double destinationLat;
+        private String originFullAddress;
+        private Double originLat;
         private String destination;
         private Integer price;
-        private String origin_companyName;
+        private String originCompanyName;
         private String freightType;
-        private Integer size_length;
-        private String origin_contactName;
-        private String destination_full_address;
-        private Double destination_lon;
-        private String destination_contactName;
-        private String extra_info;
-        private String origin_date_end;
+        private Integer sizeLength;
+        private String originContactName;
+        private String destinationFullAddress;
+        private Double destinationLon;
+        private String destinationContactName;
+        private String extraInfo;
+        private String originDateEnd;
 
         public Builder() {
         }
@@ -137,7 +137,7 @@ public class Load {
         }
 
         public Builder origin_date(String val) {
-            origin_date = val;
+            originDate = val;
             return this;
         }
 
@@ -152,12 +152,12 @@ public class Load {
         }
 
         public Builder destination_date_end(String val) {
-            destination_date_end = val;
+            destinationDateEnd = val;
             return this;
         }
 
         public Builder size_width(Integer val) {
-            size_width = val;
+            sizeWidth = val;
             return this;
         }
 
@@ -167,12 +167,12 @@ public class Load {
         }
 
         public Builder destination_date(String val) {
-            destination_date = val;
+            destinationDate = val;
             return this;
         }
 
         public Builder destination_companyName(String val) {
-            destination_companyName = val;
+            destinationCompanyName = val;
             return this;
         }
 
@@ -182,7 +182,7 @@ public class Load {
         }
 
         public Builder size_height(Integer val) {
-            size_height = val;
+            sizeHeight = val;
             return this;
         }
 
@@ -202,7 +202,7 @@ public class Load {
         }
 
         public Builder origin_lon(Double val) {
-            origin_lon = val;
+            originLon = val;
             return this;
         }
 
@@ -212,17 +212,17 @@ public class Load {
         }
 
         public Builder destination_lat(Double val) {
-            destination_lat = val;
+            destinationLat = val;
             return this;
         }
 
         public Builder origin_full_address(String val) {
-            origin_full_address = val;
+            originFullAddress = val;
             return this;
         }
 
         public Builder origin_lat(Double val) {
-            origin_lat = val;
+            originLat = val;
             return this;
         }
 
@@ -237,7 +237,7 @@ public class Load {
         }
 
         public Builder origin_companyName(String val) {
-            origin_companyName = val;
+            originCompanyName = val;
             return this;
         }
 
@@ -247,37 +247,37 @@ public class Load {
         }
 
         public Builder size_length(Integer val) {
-            size_length = val;
+            sizeLength = val;
             return this;
         }
 
         public Builder origin_contactName(String val) {
-            origin_contactName = val;
+            originContactName = val;
             return this;
         }
 
         public Builder destination_full_address(String val) {
-            destination_full_address = val;
+            destinationFullAddress = val;
             return this;
         }
 
         public Builder destination_lon(Double val) {
-            destination_lon = val;
+            destinationLon = val;
             return this;
         }
 
         public Builder destination_contactName(String val) {
-            destination_contactName = val;
+            destinationContactName = val;
             return this;
         }
 
         public Builder extra_info(String val) {
-            extra_info = val;
+            extraInfo = val;
             return this;
         }
 
         public Builder origin_date_end(String val) {
-            origin_date_end = val;
+            originDateEnd = val;
             return this;
         }
 
@@ -290,8 +290,8 @@ public class Load {
         return shiper;
     }
 
-    public String getOrigin_date() {
-        return origin_date;
+    public String getOriginDate() {
+        return originDate;
     }
 
     public Integer getWeight() {
@@ -302,8 +302,8 @@ public class Load {
         return packageType;
     }
 
-    public String getDestination_date_end() {
-        return destination_date_end;
+    public String getDestinationDateEnd() {
+        return destinationDateEnd;
     }
 
     public Integer getSize_width() {
@@ -314,20 +314,20 @@ public class Load {
         return distance;
     }
 
-    public String getDestination_date() {
-        return destination_date;
+    public String getDestinationDate() {
+        return destinationDate;
     }
 
-    public String getDestination_companyName() {
-        return destination_companyName;
+    public String getDestinationCompanyName() {
+        return destinationCompanyName;
     }
 
     public String getName() {
         return name;
     }
 
-    public Integer getSize_height() {
-        return size_height;
+    public Integer getSizeHeight() {
+        return sizeHeight;
     }
 
     public String getDriver() {
@@ -342,20 +342,20 @@ public class Load {
         return status;
     }
 
-    public Double getOrigin_lon() {
-        return origin_lon;
+    public Double getOriginLon() {
+        return originLon;
     }
 
     public String getOrigin() {
         return origin;
     }
 
-    public Double getDestination_lat() {
-        return destination_lat;
+    public Double getDestinationLat() {
+        return destinationLat;
     }
 
-    public String getOrigin_full_address() {
-        return origin_full_address;
+    public String getOriginFullAddress() {
+        return originFullAddress;
     }
 
     public Double getOrigin_lat() {
@@ -370,39 +370,39 @@ public class Load {
         return price;
     }
 
-    public String getOrigin_companyName() {
-        return origin_companyName;
+    public String getOriginCompanyName() {
+        return originCompanyName;
     }
 
     public String getFreightType() {
         return freightType;
     }
 
-    public Integer getSize_length() {
-        return size_length;
+    public Integer getSizeLength() {
+        return sizeLength;
     }
 
-    public String getOrigin_contactName() {
-        return origin_contactName;
+    public String getOriginContactName() {
+        return originContactName;
     }
 
-    public String getDestination_full_address() {
-        return destination_full_address;
+    public String getDestinationFullAddress() {
+        return destinationFullAddress;
     }
 
-    public Double getDestination_lon() {
-        return destination_lon;
+    public Double getDestinationLon() {
+        return destinationLon;
     }
 
-    public String getDestination_contactName() {
-        return destination_contactName;
+    public String getDestinationContactName() {
+        return destinationContactName;
     }
 
-    public String getExtra_info() {
-        return extra_info;
+    public String getExtraInfo() {
+        return extraInfo;
     }
 
-    public String getOrigin_date_end() {
-        return origin_date_end;
+    public String getOriginDateEnd() {
+        return originDateEnd;
     }
 }
