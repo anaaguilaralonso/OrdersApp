@@ -7,7 +7,7 @@ import com.einao.ordersapp.data.entities.LoadEntity;
 import com.einao.ordersapp.data.entities.LoadsEntity;
 import com.einao.ordersapp.data.network.OrdersNetworkDataSource;
 import com.einao.ordersapp.data.network.common.EndpointConstants;
-import com.einao.ordersapp.data.network.common.NetworkCallback;
+import com.einao.ordersapp.data.network.common.RepositoryCallback;
 import com.einao.ordersapp.domain.beans.Error;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,21 +20,25 @@ import java.util.Iterator;
 
 public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource {
 
-    private NetworkCallback networkCallback;
+    private RepositoryCallback repositoryCallback;
 
     private final DatabaseReference myRef;
+
+    private Long lastUpdate;
 
 
     public OrdersNetworkDataSourceFirebase() {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database.setPersistenceEnabled(true);
         myRef = database.getReference();
 
+        lastUpdate = 0L;
     }
 
     @Override
-    public void getOrders(NetworkCallback networkCallback) {
-        this.networkCallback = networkCallback;
+    public void getOrders(RepositoryCallback repositoryCallback) {
+        this.repositoryCallback = repositoryCallback;
 
         myRef.child(EndpointConstants.RESOURCE_LOADS).addValueEventListener(new ValueEventListener() {
             @Override
@@ -44,8 +48,10 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
                 Log.d(this.getClass().getName(), dataSnapshot.toString());
 
                 LoadsEntity loadsEntity = createLoadsEntity(dataSnapshot);
-                if (OrdersNetworkDataSourceFirebase.this.networkCallback == null) return;
-                OrdersNetworkDataSourceFirebase.this.networkCallback.onSuccess(loadsEntity);
+                if (OrdersNetworkDataSourceFirebase.this.repositoryCallback == null) return;
+                OrdersNetworkDataSourceFirebase.this.repositoryCallback.onSuccess(loadsEntity);
+                // We usually update lastUpdate here but Firebase has its own database
+                // lastUpdate = System.nanoTime() / (1000*1000);
             }
 
             @Override
@@ -54,8 +60,8 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
                 Log.w(this.getClass().getName(), "Failed to read value.", error.toException());
 
                 Error errorEntity = createErrorEntity(error);
-                if (OrdersNetworkDataSourceFirebase.this.networkCallback == null) return;
-                OrdersNetworkDataSourceFirebase.this.networkCallback.onFailure(errorEntity);
+                if (OrdersNetworkDataSourceFirebase.this.repositoryCallback == null) return;
+                OrdersNetworkDataSourceFirebase.this.repositoryCallback.onFailure(errorEntity);
             }
         });
     }
@@ -80,4 +86,8 @@ public class OrdersNetworkDataSourceFirebase implements OrdersNetworkDataSource 
         return errorEntity;
     }
 
+    @Override
+    public Long getLastUpdate() {
+        return lastUpdate;
+    }
 }

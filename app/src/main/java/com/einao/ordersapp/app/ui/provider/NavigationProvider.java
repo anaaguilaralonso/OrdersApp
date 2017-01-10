@@ -1,8 +1,7 @@
-package com.einao.ordersapp.app.provider;
+package com.einao.ordersapp.app.ui.provider;
 
 import android.app.Activity;
 
-import com.einao.ordersapp.app.ui.provider.LoadDetailNavigator;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 import com.einao.ordersapp.domain.providers.Navigator;
 

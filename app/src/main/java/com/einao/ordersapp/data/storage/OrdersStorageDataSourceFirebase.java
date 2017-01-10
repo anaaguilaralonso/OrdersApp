@@ -1,4 +1,11 @@
 package com.einao.ordersapp.data.storage;
 
-public class OrdersStorageDataSourceFirebase implements OrdersStorageDataSource{
+import com.einao.ordersapp.data.network.common.RepositoryCallback;
+
+public class OrdersStorageDataSourceFirebase implements OrdersStorageDataSource {
+
+    @Override
+    public void getOrders(RepositoryCallback repositoryCallback) {
+
+    }
 }

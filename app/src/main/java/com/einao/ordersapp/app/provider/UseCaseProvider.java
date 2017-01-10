@@ -4,7 +4,7 @@ import com.einao.ordersapp.domain.usecases.GetOrdersUseCase;
 
 public class UseCaseProvider {
 
-    RepositoryProvider repositoryProvider;
+    private final RepositoryProvider repositoryProvider;
 
     public UseCaseProvider(RepositoryProvider repositoryProvider) {
         this.repositoryProvider = repositoryProvider;
