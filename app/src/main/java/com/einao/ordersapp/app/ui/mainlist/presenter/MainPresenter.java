@@ -33,7 +33,7 @@ public class MainPresenter extends Presenter<MainView> {
         ordersUserCase.execute(useCaseCallback);
     }
 
-    private final UseCaseCallback<Loads> useCaseCallback = new UseCaseCallback<Loads>() {
+    protected final UseCaseCallback<Loads> useCaseCallback = new UseCaseCallback<Loads>() {
         @Override
         public void onError(Error error) {
             if (!existView()) return;
