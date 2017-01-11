@@ -2,41 +2,25 @@ package com.einao.ordersapp.app.ui.provider;
 
 import com.einao.ordersapp.domain.providers.MapFormatter;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
-
 public class GoogleMapFormatter implements MapFormatter {
 
-    private String googleApiUrl = "https://maps.googleapis.com/maps/api/staticmap?";
-    private Map<String, String> properties;
+    private final String API_BASE_URL = "https://maps.googleapis.com/maps/api/staticmap?";
+    private final String MARKERS_ATTRIBUTE = "markers=";
+    private final String ATTRIBUTE_SEPARATOR = "&";
+    private final String SIZE = "size=1200x1200";
+    private final String ZOOM = "zoom=8";
+    private final String CENTER_ATTRIBUTE = "center=";
 
-    public GoogleMapFormatter() {
-        properties = new HashMap<>();
-
-        setCommonProperties();
-    }
-
-    private void setCommonProperties() {
-        properties.put("zoom", "10");
-        properties.put("size", "1200x1200");
-    }
 
     @Override
     public String getMapUrl(Double lat, Double lon) {
-        properties.put("center", lat + "," + lon);
-        properties.put("markers", lat + "," + lon);
+        String url = API_BASE_URL;
 
-        String url = googleApiUrl;
+        String coordinates = String.valueOf(lat) + "," + String.valueOf(lon);
 
-        Set<String> mapProperties = properties.keySet();
-        Iterator<String> iterator = mapProperties.iterator();
-        while (iterator.hasNext()) {
-            String property = iterator.next();
-            url = url + property + "=" + properties.get(property) + "&";
-        }
-        url = url.substring(0, url.length() - 1);
+        url = url + MARKERS_ATTRIBUTE + coordinates;
+        url = url + ATTRIBUTE_SEPARATOR + SIZE + ATTRIBUTE_SEPARATOR + ZOOM + ATTRIBUTE_SEPARATOR;
+        url = url + CENTER_ATTRIBUTE + coordinates;
 
         return url;
     }
