@@ -8,7 +8,7 @@ public class GoogleMapFormatter implements MapFormatter {
     private final String MARKERS_ATTRIBUTE = "markers=";
     private final String ATTRIBUTE_SEPARATOR = "&";
     private final String SIZE = "size=1200x1200";
-    private final String ZOOM = "zoom=8";
+    private final String ZOOM = "zoom=12";
     private final String CENTER_ATTRIBUTE = "center=";
 
 
