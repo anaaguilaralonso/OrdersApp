@@ -32,6 +32,8 @@ public class LoadViewModelObjectMother {
         load.setPrice("6€");
         load.setStatus(new Random().nextInt());
         load.setWeight(new Random().nextInt());
+        load.setMapUrl(
+                "https://maps.googleapis.com/maps/api/staticmap?markers=40.123,-3.123&size=1200x1200&zoom=8&center=40.123,-3.123");
 
         return load;
 

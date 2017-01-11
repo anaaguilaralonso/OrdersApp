@@ -5,6 +5,7 @@ import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
 import com.einao.ordersapp.domain.beans.Loads;
 import com.einao.ordersapp.domain.common.ErrorObjectMother;
 import com.einao.ordersapp.domain.common.LoadsObjectMother;
+import com.einao.ordersapp.domain.providers.MapFormatter;
 import com.einao.ordersapp.domain.providers.Navigator;
 import com.einao.ordersapp.domain.providers.TextFormatter;
 import com.einao.ordersapp.domain.usecases.GetOrdersUseCase;
@@ -33,13 +34,16 @@ public class MainPresenterTest {
     @Mock
     private TextFormatter textFormatter;
 
+    @Mock
+    private MapFormatter mapFormatter;
+
     private MainPresenter mainPresenter;
     private LoadsObjectMother loadsObjectMother;
     private ErrorObjectMother errorObjectMother;
 
     @Before
     public void init() {
-        mainPresenter = new MainPresenter(mainView, navigator, getOrdersUseCase, textFormatter);
+        mainPresenter = new MainPresenter(mainView, navigator, getOrdersUseCase, textFormatter, mapFormatter);
 
         loadsObjectMother = new LoadsObjectMother();
         errorObjectMother = new ErrorObjectMother();

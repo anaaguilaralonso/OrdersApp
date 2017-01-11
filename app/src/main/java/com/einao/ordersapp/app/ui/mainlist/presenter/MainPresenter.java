@@ -8,6 +8,7 @@ import com.einao.ordersapp.app.ui.viewmodel.mappers.LoadsViewModelMapper;
 import com.einao.ordersapp.domain.UseCaseCallback;
 import com.einao.ordersapp.domain.beans.Error;
 import com.einao.ordersapp.domain.beans.Loads;
+import com.einao.ordersapp.domain.providers.MapFormatter;
 import com.einao.ordersapp.domain.providers.Navigator;
 import com.einao.ordersapp.domain.providers.TextFormatter;
 import com.einao.ordersapp.domain.usecases.GetOrdersUseCase;
@@ -19,14 +20,16 @@ public class MainPresenter extends Presenter<MainView> {
     private final GetOrdersUseCase ordersUserCase;
     private final Navigator<LoadViewModel> navigator;
     private final TextFormatter textFormatter;
+    private final MapFormatter mapFormatter;
 
 
     public MainPresenter(MainView mainView, Navigator<LoadViewModel> navigator, GetOrdersUseCase ordersUserCase,
-                         TextFormatter textFormatter) {
+                         TextFormatter textFormatter, MapFormatter mapFormatter) {
         super(mainView);
         this.ordersUserCase = ordersUserCase;
         this.navigator = navigator;
         this.textFormatter = textFormatter;
+        this.mapFormatter = mapFormatter;
     }
 
     @Override
@@ -55,7 +58,7 @@ public class MainPresenter extends Presenter<MainView> {
     private void ordersFetched(Loads data) {
         view.get().clearList();
 
-        LoadsViewModelMapper mapper = new LoadsViewModelMapper(textFormatter);
+        LoadsViewModelMapper mapper = new LoadsViewModelMapper(textFormatter, mapFormatter);
         LoadsViewModel loadsViewModel = mapper.map(data);
 
         addLoadsToView(loadsViewModel);

@@ -13,6 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <ImageView
+        android:id="@+id/map"
+        style="@style/icon_simple_layout"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_placeholder"/>
+
     <TextView
         android:id="@+id/destination"
         android:layout_width="match_parent"

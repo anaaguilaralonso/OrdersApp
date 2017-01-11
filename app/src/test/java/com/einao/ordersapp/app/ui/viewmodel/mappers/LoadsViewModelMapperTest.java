@@ -3,6 +3,7 @@ package com.einao.ordersapp.app.ui.viewmodel.mappers;
 import com.einao.ordersapp.app.ui.viewmodel.LoadsViewModel;
 import com.einao.ordersapp.domain.beans.Loads;
 import com.einao.ordersapp.domain.common.LoadsObjectMother;
+import com.einao.ordersapp.domain.providers.MapFormatter;
 import com.einao.ordersapp.domain.providers.TextFormatter;
 
 import org.junit.Assert;
@@ -15,12 +16,15 @@ import org.mockito.junit.MockitoJUnitRunner;
 public class LoadsViewModelMapperTest {
 
     @Mock
-    TextFormatter textFormatter;
+    private TextFormatter textFormatter;
+
+    @Mock
+    private MapFormatter mapFormatter;
 
     @Test
     public void onMap_addAllLoads() {
         int numberOfLoads = 4;
-        LoadsViewModelMapper loadsViewModelMapper = new LoadsViewModelMapper(textFormatter);
+        LoadsViewModelMapper loadsViewModelMapper = new LoadsViewModelMapper(textFormatter, mapFormatter);
         LoadsObjectMother loadsObjectMother = new LoadsObjectMother();
         Loads loads = loadsObjectMother.getLoads(numberOfLoads);
 

@@ -16,17 +16,18 @@ public class LoadDetailPresenterTest {
     @Mock
     LoadDetailView loadDetailView;
 
+    @Mock
+    LoadViewModel loadViewModel;
+
     LoadDetailPresenter loadDetailPresenter;
 
     @Before
     public void init() {
-        loadDetailPresenter = new LoadDetailPresenter(loadDetailView);
+        loadDetailPresenter = new LoadDetailPresenter(loadDetailView, loadViewModel);
     }
 
     @Test
     public void onStart_setLoadViewModel_showDetails() {
-        LoadViewModel loadViewModel = new LoadViewModel();
-        loadDetailPresenter.setLoad(loadViewModel);
 
         loadDetailPresenter.start();
 

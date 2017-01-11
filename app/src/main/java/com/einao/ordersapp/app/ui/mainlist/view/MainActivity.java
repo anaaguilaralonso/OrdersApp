@@ -44,7 +44,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         Navigator<LoadViewModel> loadDetailNavigationProvider = navigationProvider.getLoadDetailNavigationProvider();
         GetOrdersUseCase ordersUseCase = useCaseProvider.getOrdersUseCase();
         return new MainPresenter(this, loadDetailNavigationProvider,
-                ordersUseCase, textFormatter);
+                ordersUseCase, textFormatter, mapFormatter);
     }
 
     @Override
