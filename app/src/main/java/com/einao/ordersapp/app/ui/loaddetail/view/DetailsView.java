@@ -5,11 +5,13 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.einao.ordersapp.R;
 import com.einao.ordersapp.app.ui.viewmodel.LoadViewModel;
+import com.einao.ordersapp.domain.providers.ImageLoader;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,6 +20,9 @@ public class DetailsView extends LinearLayout {
 
     @BindView(R.id.name)
     TextView name;
+
+    @BindView(R.id.map)
+    ImageView map;
 
     @BindView(R.id.destination)
     TextView destination;
@@ -67,9 +72,11 @@ public class DetailsView extends LinearLayout {
         ButterKnife.bind(this);
     }
 
-    public void setInformation(LoadViewModel loadViewModel) {
+    public void setInformation(LoadViewModel loadViewModel, ImageLoader<ImageView> imageLoader) {
         destination.setText(loadViewModel.getDestinationFullAddress());
         name.setText(loadViewModel.getName());
+        imageLoader.load(map,
+                "https://maps.googleapis.com/maps/api/staticmap?center=40.123,-3.123&zoom=8&size=1200x1200&markers=40.123,-3.123");
         packageType.setText(loadViewModel.getPackageType());
         originDate.setText(loadViewModel.getOriginDate());
         destinationDate.setText(loadViewModel.getDestinationDate());

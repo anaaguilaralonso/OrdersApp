@@ -39,6 +39,6 @@ public class LoadDetailActivity extends BaseActivity<LoadDetailPresenter> implem
 
     @Override
     public void setViewInformation(LoadViewModel loadViewModel) {
-        detailsView.setInformation(loadViewModel);
+        detailsView.setInformation(loadViewModel, imageLoader);
     }
 }

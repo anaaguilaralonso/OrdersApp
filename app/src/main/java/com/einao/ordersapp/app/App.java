@@ -2,6 +2,7 @@ package com.einao.ordersapp.app;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 
 import com.einao.ordersapp.app.policy.ShortDataBasePolicy;
 import com.einao.ordersapp.app.provider.NetworkDataSourceProvider;
@@ -11,6 +12,8 @@ import com.einao.ordersapp.app.provider.UseCaseProvider;
 import com.einao.ordersapp.app.ui.provider.AndroidTimeProvider;
 import com.einao.ordersapp.app.ui.provider.NavigationProvider;
 import com.einao.ordersapp.app.ui.provider.OrdersTextFormatter;
+import com.einao.ordersapp.app.ui.provider.PicassoImageLoader;
+import com.einao.ordersapp.domain.providers.ImageLoader;
 import com.einao.ordersapp.domain.providers.TextFormatter;
 import com.einao.ordersapp.domain.providers.TimeProvider;
 
@@ -46,5 +49,9 @@ public class App extends Application {
 
     public NavigationProvider getNavigationProvider(Activity activity) {
         return new NavigationProvider(activity);
+    }
+
+    public ImageLoader getImageLoader(Context context) {
+        return new PicassoImageLoader(context);
     }
 }
