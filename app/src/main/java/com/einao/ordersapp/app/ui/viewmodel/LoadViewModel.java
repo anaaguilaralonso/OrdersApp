@@ -21,24 +21,14 @@ public class LoadViewModel implements Parcelable {
 
     private String destinationFullAddress;
 
-    private Double destinationLat;
+    private String mapUrl;
 
-    private Double destinationLon;
-
-    public Double getDestinationLat() {
-        return destinationLat;
+    public String getMapUrl() {
+        return mapUrl;
     }
 
-    public void setDestinationLat(Double destinationLat) {
-        this.destinationLat = destinationLat;
-    }
-
-    public Double getDestinationLon() {
-        return destinationLon;
-    }
-
-    public void setDestinationLon(Double destinationLon) {
-        this.destinationLon = destinationLon;
+    public void setMapUrl(String mapUrl) {
+        this.mapUrl = mapUrl;
     }
 
     public String getOriginDate() {
@@ -105,6 +95,9 @@ public class LoadViewModel implements Parcelable {
         this.destinationFullAddress = destinationFullAddress;
     }
 
+    public LoadViewModel() {
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -120,9 +113,7 @@ public class LoadViewModel implements Parcelable {
         dest.writeValue(this.status);
         dest.writeString(this.price);
         dest.writeString(this.destinationFullAddress);
-    }
-
-    public LoadViewModel() {
+        dest.writeString(this.mapUrl);
     }
 
     protected LoadViewModel(Parcel in) {
@@ -134,9 +125,10 @@ public class LoadViewModel implements Parcelable {
         this.status = (Integer) in.readValue(Integer.class.getClassLoader());
         this.price = in.readString();
         this.destinationFullAddress = in.readString();
+        this.mapUrl = in.readString();
     }
 
-    public static final Parcelable.Creator<LoadViewModel> CREATOR = new Parcelable.Creator<LoadViewModel>() {
+    public static final Creator<LoadViewModel> CREATOR = new Creator<LoadViewModel>() {
         @Override
         public LoadViewModel createFromParcel(Parcel source) {
             return new LoadViewModel(source);

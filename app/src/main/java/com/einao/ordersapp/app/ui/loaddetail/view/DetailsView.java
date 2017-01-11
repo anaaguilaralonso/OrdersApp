@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -75,10 +76,8 @@ public class DetailsView extends LinearLayout {
     public void setInformation(LoadViewModel loadViewModel, ImageLoader<ImageView> imageLoader) {
         destination.setText(loadViewModel.getDestinationFullAddress());
         name.setText(loadViewModel.getName());
-        imageLoader.load(map,
-                "https://maps.googleapis.com/maps/api/staticmap?center=" + loadViewModel.getDestinationLat() + "," +
-                        "" + loadViewModel.getDestinationLon() + "&zoom=8&size=1200x1200&markers" +
-                        "=" + loadViewModel.getDestinationLat() + "," + loadViewModel.getDestinationLon());
+        Log.i("XX", "url to load: " + loadViewModel.getMapUrl());
+        imageLoader.load(map, loadViewModel.getMapUrl());
         packageType.setText(loadViewModel.getPackageType());
         originDate.setText(loadViewModel.getOriginDate());
         destinationDate.setText(loadViewModel.getDestinationDate());

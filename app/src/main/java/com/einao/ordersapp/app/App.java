@@ -10,10 +10,12 @@ import com.einao.ordersapp.app.provider.RepositoryProvider;
 import com.einao.ordersapp.app.provider.StorageDataSourceProvider;
 import com.einao.ordersapp.app.provider.UseCaseProvider;
 import com.einao.ordersapp.app.ui.provider.AndroidTimeProvider;
+import com.einao.ordersapp.app.ui.provider.GoogleMapFormatter;
 import com.einao.ordersapp.app.ui.provider.NavigationProvider;
 import com.einao.ordersapp.app.ui.provider.OrdersTextFormatter;
 import com.einao.ordersapp.app.ui.provider.PicassoImageLoader;
 import com.einao.ordersapp.domain.providers.ImageLoader;
+import com.einao.ordersapp.domain.providers.MapFormatter;
 import com.einao.ordersapp.domain.providers.TextFormatter;
 import com.einao.ordersapp.domain.providers.TimeProvider;
 
@@ -53,5 +55,9 @@ public class App extends Application {
 
     public ImageLoader getImageLoader(Context context) {
         return new PicassoImageLoader(context);
+    }
+
+    public MapFormatter getMapFormatter() {
+        return new GoogleMapFormatter();
     }
 }
