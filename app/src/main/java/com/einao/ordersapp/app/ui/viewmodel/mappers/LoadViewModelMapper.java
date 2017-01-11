@@ -24,6 +24,8 @@ public class LoadViewModelMapper {
         loadViewModel.setDestinationFullAddress(load.getDestinationFullAddress());
         loadViewModel.setOriginDate(textFormatter.getDateDisplay(load.getOriginDate()));
         loadViewModel.setDestinationDate(textFormatter.getDateDisplay(load.getDestinationDate()));
+        loadViewModel.setDestinationLat(load.getDestinationLat());
+        loadViewModel.setDestinationLon(load.getDestinationLon());
 
         return loadViewModel;
 

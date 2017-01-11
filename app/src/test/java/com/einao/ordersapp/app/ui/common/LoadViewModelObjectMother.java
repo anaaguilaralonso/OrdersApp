@@ -32,6 +32,8 @@ public class LoadViewModelObjectMother {
         load.setPrice("6€");
         load.setStatus(new Random().nextInt());
         load.setWeight(new Random().nextInt());
+        load.setDestinationLat(new Random().nextDouble());
+        load.setDestinationLon(new Random().nextDouble());
 
         return load;
 

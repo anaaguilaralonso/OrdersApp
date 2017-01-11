@@ -76,7 +76,9 @@ public class DetailsView extends LinearLayout {
         destination.setText(loadViewModel.getDestinationFullAddress());
         name.setText(loadViewModel.getName());
         imageLoader.load(map,
-                "https://maps.googleapis.com/maps/api/staticmap?center=40.123,-3.123&zoom=8&size=1200x1200&markers=40.123,-3.123");
+                "https://maps.googleapis.com/maps/api/staticmap?center=" + loadViewModel.getDestinationLat() + "," +
+                        "" + loadViewModel.getDestinationLon() + "&zoom=8&size=1200x1200&markers" +
+                        "=" + loadViewModel.getDestinationLat() + "," + loadViewModel.getDestinationLon());
         packageType.setText(loadViewModel.getPackageType());
         originDate.setText(loadViewModel.getOriginDate());
         destinationDate.setText(loadViewModel.getDestinationDate());

@@ -21,6 +21,25 @@ public class LoadViewModel implements Parcelable {
 
     private String destinationFullAddress;
 
+    private Double destinationLat;
+
+    private Double destinationLon;
+
+    public Double getDestinationLat() {
+        return destinationLat;
+    }
+
+    public void setDestinationLat(Double destinationLat) {
+        this.destinationLat = destinationLat;
+    }
+
+    public Double getDestinationLon() {
+        return destinationLon;
+    }
+
+    public void setDestinationLon(Double destinationLon) {
+        this.destinationLon = destinationLon;
+    }
 
     public String getOriginDate() {
         return originDate;
